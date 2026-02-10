@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width", initial-scale=" 1.0">
+    <title>Trường THPT Mạc Đĩnh Chi</title>
+    <link rel="stylesheet" href ="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href ="index.html"><img src="Resources/logo2.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href ="index.html">Trang chủ</a></li>
+                    <li><a href ="">Về trường</a></li>
+                    <li><a href ="Activities.html">Hoạt động</a></li>
+                    <li><a href ="Events.html">Sự kiện</a></li>
+                    <li><a href ="">Vinh danh</a></li>
+                    <li><a href ="Contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+<!----- Events ----->
+    <section class="Events">
+        <h1>Sự kiện nổi bật</h1>
+        <p>Hội Xuân</p>
+<div class="row"> <div class="events-col">
+        <img src="Resources/cây mai.jpg">
+        <div class="layer">
+            <h3>Cây đào</h3>
+        </div>
+    </div>
+
+    <div class="events-col">
+        <img src="Resources/cây mai.jpg">
+        <div class="layer">
+            <h3>Cây đào</h3>
+        </div>
+    </div>
+
+    <div class="events-col">
+        <img src="Resources/cây mai.jpg">
+        <div class="layer">
+            <h3>Cây đào</h3>
+        </div>
+    </div>
+    </section>
+    <h3></h3>
+    <div class="music-container">
+        <div class="music-info">
+            <h4 id="title">ki uc ve long tot</h4>
+            <div class="progress-container">
+                <div class="progress"></div>
+        </div>
+
+        <audio src="Resources/Memories of kindness.m4a" id="audio"></audio>
+        <div class ="img-container">
+            <img src="Resources/sao bang.jpeg" alt="music-cover" id="cover"/>
+        </div>
+        
+        <div class="navigation">
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+         
+    </div> 
+<script>
+const musicContainer = document.querySelector('.music-container');
+const playBtn = document.getElementById('play');
+const audio = document.getElementById('audio');
+const title = document.getElementById('title');
+
+playBtn.addEventListener('click', () => {
+    if (musicContainer.classList.contains('play')) {
+        pauseSong();
+    } else {
+        playSong();
+    }
+});
+
+function playSong() {
+    musicContainer.classList.add('play');
+    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    audio.play();
+}
+
+function pauseSong() {
+    musicContainer.classList.remove('play');
+    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+    audio.pause();
+}
+    var navLinks= document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right ="-0px";
+    }
+    function hideMenu(){
+        navLinks.style.right ="-300px";
+
+    }
+</script>
+</body>
+
+</html>
